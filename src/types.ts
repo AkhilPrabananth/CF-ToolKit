@@ -1,3 +1,12 @@
+export type Contest = {
+    id: number;
+    name: string;
+    phase: string;
+    duration: number;
+    start: number;
+    end: number;
+};
+
 export type TestCase = {
     input: string;
     output: string;
