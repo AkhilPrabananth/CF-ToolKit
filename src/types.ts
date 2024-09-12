@@ -2,9 +2,8 @@ export type Contest = {
     id: number;
     name: string;
     phase: string;
-    duration: number;
-    start: number;
-    end: number;
+    startTimeSeconds: number;
+    durationSeconds: number;
 };
 
 export type TestCase = {
