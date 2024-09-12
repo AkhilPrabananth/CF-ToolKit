@@ -9,17 +9,14 @@ export type Contest = {
 export type TestCase = {
     input: string;
     output: string;
-    id: number;
 };
 
 export type Problem = {
     name: string;
-    url: string;
-    interactive: boolean;
+    url?: string;
     memoryLimit: number;
     timeLimit: number;
-    group: string;
-    tests: TestCase[];
+    testCases: TestCase[];
     srcPath: string;
     local?: boolean;
 };
