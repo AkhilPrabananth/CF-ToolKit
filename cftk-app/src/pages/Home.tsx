@@ -94,7 +94,6 @@ function Home() {
                 <th>Name</th>
                 <th>Start</th>
                 <th>Duration</th>
-                <th>Link</th> {/* New column for the button */}
               </tr>
             </thead>
             <tbody>
@@ -104,11 +103,6 @@ function Home() {
                   <td>{contest.name}</td>
                   <td>{new Date(contest.startTimeSeconds * 1000).toLocaleString()}</td>
                   <td>{Math.floor(contest.durationSeconds / 3600)} hours</td>
-                  <td>
-                    <a href={`https://codeforces.com/contest/${contest.id}`} target="_blank" rel="noopener noreferrer">
-                      <button>View Contest</button>
-                    </a>
-                  </td>
                 </tr>
               ))}
             </tbody>
