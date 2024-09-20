@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import CreateProblemFromURL from '../CreateProblemFromURL';
-import CreateLocalProblem from './CreateLocalProblem';
+import CreateLocalProblem from '../CreateLocalProblem';
 import { Problem, TestCase } from '../../../src/types';
 import * as vscode from 'vscode';
 
 const ProblemView: React.FC = () => {
   const [problem, setProblem] = useState<Problem | null>(null);
   const [newTestCase, setNewTestCase] = useState<TestCase>({ input: '', output: '' });
-  const vscode = acquireVsCodeApi();
 
   const addTestCase = () => {
     if (problem) {
@@ -39,9 +38,8 @@ const ProblemView: React.FC = () => {
           <h2>{problem.name}</h2>
           <p><strong>Memory Limit:</strong> {problem.memoryLimit} MB</p>
           <p><strong>Time Limit:</strong> {problem.timeLimit} ms</p>
-          <p><strong>Source Path:</strong> {problem.srcPath}</p>
           {problem.url && <p><strong>URL:</strong> <a href={problem.url}>{problem.url}</a></p>}
-          <h3>Test Cases</h3>
+          <h3>Test Cases: </h3>
           <ul>
             {problem.testCases.map(( testCase, index) => (
               <li key={index}>
